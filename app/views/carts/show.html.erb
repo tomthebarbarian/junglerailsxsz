@@ -52,12 +52,11 @@
   </div>
 
   <% end-%>
+
   <% if  cart.size < 1 -%>
-  <div class="row">
-    <div>Your Cart is empty</div>
+    <div class='alert'>Your Cart is empty</div>
       <div class="col-xs-12">
        <%= link_to 'Home', :root %>
       </div>
-  </div>
   <% end-%>
 </section>
