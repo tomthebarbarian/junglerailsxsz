@@ -4,6 +4,8 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if  cart.size > 0 -%>
+  
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -49,4 +51,12 @@
     </div>
   </div>
 
+  <% end-%>
+
+  <% if  cart.size < 1 -%>
+    <div class='alert'>Your Cart is empty</div>
+      <div class="col-xs-12">
+       <%= link_to 'Home', :root %>
+      </div>
+  <% end-%>
 </section>
