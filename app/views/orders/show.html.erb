@@ -19,7 +19,8 @@
         <% @order.line_items.each do |item| %>
           <p>
             <%=item[:quantity]%>
-            <%=item[:product_id]%>
+            <%=Product.where(id: item[:product_id]).map{|product| product} %>
+            <%=item[:order_id]%>
           </p>
         <% end %>
       </tbody>

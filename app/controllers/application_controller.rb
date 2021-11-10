@@ -15,6 +15,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :enhanced_cart
 
+  def order_history(order_line_items)
+    @order_history ||= Product.where(id: order_line_items.keys).map {|product| { product:product, quantity: cart[product.id.to_s] } }
+  end
+  helper_method :order_history
+
   def cart_subtotal_cents
     enhanced_cart.map {|entry| entry[:product].price_cents * entry[:quantity]}.sum
   end
