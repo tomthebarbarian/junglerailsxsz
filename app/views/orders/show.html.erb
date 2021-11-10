@@ -27,19 +27,17 @@
       </tbody>
       <tfoot>
         <tr>
-          <th colspan="4">
+          <th colspan="1">
+            Email:
+          </th>
+          <th><%=@order.email%></th>
+          <th colspan="2">
             TOTAL:
           </th>
           <th>
           <%=humanized_money_with_symbol @order.total_cents / 100%>
           </th>
           
-        </tr>
-        <tr>
-          <th colspan="4">
-            Email:
-          </th>
-          <th><%=@order.email%></th>
         </tr>
       </tfoot>
     </table>
