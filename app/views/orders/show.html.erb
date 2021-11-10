@@ -6,6 +6,8 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+  </div>
+  <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -20,10 +22,8 @@
           <%= render 'line_item', 
             product: Product.where(id: item[:product_id]).map{|product| product}[0],
             quantity: item[:quantity].to_i 
-          %>
-      
+          %>   
         <% end %>
-
       </tbody>
       <tfoot>
         <tr>
