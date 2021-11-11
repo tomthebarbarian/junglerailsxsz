@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     post   :remove_item
   end
 
+  resources :about do
+    root to: 'about#index'
+  end
+  
   resources :orders, only: [:create, :show]
 
   namespace :admin do
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
   end
 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
