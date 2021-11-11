@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :about do
     root to: 'about#index'
   end
-  
+
   resources :orders, only: [:create, :show]
 
   namespace :admin do
