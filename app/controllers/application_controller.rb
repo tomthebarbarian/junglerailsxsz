@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :enhanced_cart
 
-  def order_history(order_line_items)
-    @order_history ||= Product.where(id: order_line_items.keys).map {|product| { product:product, quantity: cart[product.id.to_s] } }
+  def order_history(order_id)
+    # @order_history ||= line_item.where(order_id: order_id).map{|product| { product:product}}
   end
   helper_method :order_history
 
