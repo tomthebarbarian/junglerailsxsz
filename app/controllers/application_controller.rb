@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def password_digest
+  end
+
   def cart
     @cart ||= cookies[:cart].present? ? JSON.parse(cookies[:cart]) : {}
   end
