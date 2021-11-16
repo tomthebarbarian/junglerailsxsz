@@ -5,7 +5,10 @@ class User < ActiveRecord::Base
   has_secure_password
 
   def self.authenticate_with_credentials (email, pass)
-    user = User.find_by_email(email)
+    edited_email = email.squish
+    edited_email = edited_email.downcase
+    
+    user = User.find_by_email(edited_email)
     # puts "this is user",user
     if (user && user.authenticate(pass))
       return user

@@ -135,8 +135,21 @@ RSpec.describe User, type: :model do
       @test_user2.password = 'password'
       @test_user2.password_confirmation = 'password'
       @test_user2.save
-      
-      @test_user = User.authenticate_with_credentials('  tom.zhang989@gmail.com  ', 'password')
+
+      @test_user = User.authenticate_with_credentials("  tom.zhang989@gmail.com  ", 'password')
+      expect(@test_user).not_to be_nil
+    end 
+    it 'returns user if the email has various cases' do
+      @test_user2 = User.new;
+
+      @test_user2.email = "tom.zhang989@gmail.com"
+      @test_user2.firstname = 'tim'
+      @test_user2.lastname = 'hong'
+      @test_user2.password = 'password'
+      @test_user2.password_confirmation = 'password'
+      @test_user2.save
+
+      @test_user = User.authenticate_with_credentials("tom.zHANg989@gmail.com", 'password')
       expect(@test_user).not_to be_nil
     end 
   end
