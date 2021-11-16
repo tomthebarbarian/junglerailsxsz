@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   validates :lastname, presence: true
   validates :password, presence: true
   validates :password_confirmation, presence: true
+
+  # validates :email, exclusion: User.email
 end
