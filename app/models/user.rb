@@ -4,9 +4,10 @@ class User < ActiveRecord::Base
   has_many :orders
   has_secure_password
 
-  def authenticate_with_credentials (email, pass)
+  def self.authenticate_with_credentials (email, pass)
+    user = User.find_by_email(email)
     if (user.authenticate(pass))
-      return user.find_by_email(email)
+      return user
     else
       return nil
     end
