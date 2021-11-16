@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   def self.authenticate_with_credentials (email, pass)
     user = User.find_by_email(email)
-    if (user.authenticate(pass))
+    # puts "this is user",user
+    if (user && user.authenticate(pass))
       return user
     else
       return nil
@@ -20,6 +21,6 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   validates :password, length: { minimum: 6 }
-  # validates :email, uniqueness: {scope: :email}
+  validates :email, uniqueness: true
 
 end
