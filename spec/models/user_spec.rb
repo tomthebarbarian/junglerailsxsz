@@ -101,5 +101,9 @@ RSpec.describe User, type: :model do
 
     #   expect(test_user).not_to  be_valid
     # end
+    
+  end
+  describe '.authenticate_with_credentials' do
+    # examples for this class method here
   end
 end
