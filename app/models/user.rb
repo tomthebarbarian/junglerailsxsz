@@ -8,5 +8,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   validates :password_confirmation, presence: true
 
-  # validates :email, exclusion: User.email
+  validates :password, length: { minimum: 6 }
+  validates :email, uniqueness: {scope: :email}
+
 end
