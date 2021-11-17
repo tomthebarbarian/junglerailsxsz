@@ -31,5 +31,6 @@ RSpec.feature "Visitor navigates to product_detail", type: :feature, js:true do
     # save_screenshot
     # puts page.html
     expect(page).to have_content('Quantity')
+
   end
 end
