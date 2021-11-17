@@ -1,16 +1,8 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
-
-## Additional Steps for Apple M1 Machines
-
-1. Make sure that you are runnning Ruby 2.6.6 (`ruby -v`)
-1. Install ImageMagick `brew install imagemagick imagemagick@6 --build-from-source`
-2. Remove Gemfile.lock
-3. Replace Gemfile with version provided [here](https://gist.githubusercontent.com/FrancisBourgouin/831795ae12c4704687a0c2496d91a727/raw/ce8e2104f725f43e56650d404169c7b11c33a5c5/Gemfile)
-
+Tom's mini e-commerce application built with Rails 4.2.11 for purposes of teaching Rails by example.
 ## Setup
-
+cd
 1. Run `bundle install` to install dependencies
 2. Create `config/database.yml` by copying `config/database.example.yml`
 3. Create `config/secrets.yml` by copying `config/secrets.example.yml`
@@ -29,6 +21,44 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+* Rails 4.2.11 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## What should be visible
+
+### Products index
+When the setup is complete you should see the index of all products
+the products should have an image, details, price and buttons for add to cart and the details page
+
+If quantity is 0, it should have an additional sold out badge on the image 
+and the add to cart button should be disabled
+
+### Product details
+each product should have a details page with image, details, price and quantity
+
+### Cart and checkout
+you can add them to cart and checkout with a credit card. 
+
+if there are no items in the cart, a message displays instead
+
+there is a button at the end that leads back to the index
+
+### signup and logout
+You can click the signup button to put a user into the database, then
+use that user to sign into a session in the future
+
+You can then click the logout button to exit the session. 
+
+### Categories
+each product belongs to a category and displays a category as well
+
+selecting a category from the drop down filters the products display to only
+show the selected categories
+### Admin
+can add/delete categories and products
+only accessible by people who input the admin username and password
+
+can see summary of all products and categories
+can see list of all products
+can see list of all categories
